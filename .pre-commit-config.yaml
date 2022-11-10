@@ -8,12 +8,32 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: mixed-line-ending
+
   - repo: https://github.com/psf/black
     rev: 22.3.0
     hooks:
       - id: black
+
   - repo: https://github.com/PyCQA/isort
     rev: 5.10.1
     hooks:
       - id: isort
         args: ["--profile", "black"]
+
+  - repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+      - id: black
+        args: ["--check"]
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+        args: ["--check", "--profile", "black"]
+
+  - repo: https://github.com/PyCQA/pylint/
+    rev: v2.15.5
+    hooks:
+    - id: pylint
+      exclude: tests/  # Prevent files in tests/ to be passed in to pylint.
