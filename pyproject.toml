@@ -12,6 +12,7 @@ tqdm = "^4.64"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+pre-commit = "^2.20.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
